@@ -1,15 +1,18 @@
 package hu.progmatic.judge;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+// Ebből az osztályból létrejön egy bean.
+// Az osztály egyetlen példánya (objektuma) lesz a bean, nem maga az osztály.
 @Component
 public class MainRunner implements CommandLineRunner {
     private Judge judge;
 
-    public MainRunner(Judge judge) {
+    public MainRunner(@Qualifier("originalJudge") Judge judge) {
         this.judge = judge;
     }
 
