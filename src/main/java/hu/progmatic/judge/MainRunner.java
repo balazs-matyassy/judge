@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class MainRunner implements CommandLineRunner {
     private Judge judge;
 
-    public MainRunner(@Qualifier("originalJudge") Judge judge) {
+    public MainRunner(@Qualifier("unbiased") Judge judge) {
         this.judge = judge;
     }
 
